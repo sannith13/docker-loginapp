@@ -55,7 +55,7 @@
 			
 			{
 			"containerPort": 8888,
-			"hostPort": 88
+			"hostPort": 80
 			}
 			
 			],
