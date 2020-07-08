@@ -1,21 +1,17 @@
 sudo: required
 
-
 services:
     - docker
 
-before-install:
-   - docker build -t sannithrao/loginapp .
+before_install:
+    - docker build -t sannithrao/loginapp .
 
 script:
     - docker run sannithrao/loginapp npm test
 
+after_success:
+    - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
+    - docker push sannithrao/loginapp
 
-after-sucess:
-
-   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-
-#push image 
- - docker push sannithrao/loginapp
 
