@@ -20,7 +20,7 @@ services:
                 WAIT_HOSTS: mysql-server:3306
                 WAIT_HOSTS_TIMEOUT: 90
             ports:
-               - "8888:8888"
+               - "80:8888"
 
             depends_on:
                - mysql-server
